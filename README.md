@@ -49,6 +49,7 @@ Use the ping -t command to ping the Linux computer continuously. While the Windo
 <p>
 Next, we'll SSH into the Linux server from our Windows computer. SSH only provides access to the machine's command line; it lacks a GUI. Wireshark's filter will be configured to only depict and record SSH messages.
 </p>
+<br />
 
 <p>
 <img src="https://i.imgur.com/vU8fpQf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
@@ -56,15 +57,19 @@ Next, we'll SSH into the Linux server from our Windows computer. SSH only provid
 <p>
 Wireshark will now be used to check for DHCP. The Dynamic Host Configuration Protocol (DHCP) uses port 67 and 68 to assign IP addresses. We will use the command "ipconfig /renew" to obtain a new IP address and DHCP data will be captured by wireshark once we have entered the instruction.
 </p>
+<br />
 
 <p>
-<img src="https://i.imgur.com/VMcwmsO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/VMcwmsO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
 </p>
 <p>
 Wireshark will be configured to filter DNS traffic. By entering the command "nslookup www.google.com," which basically queries our DNS server for Google's IP address, we will start DNS traffic.
 </p>
-
 <br />
-<img src="https://i.imgur.com/VxXGv6X.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<p>
+<img src="https://i.imgur.com/VxXGv6X.png" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
 </p>
 <p>
+Lastly, we'll use tcp.port==3389 to filter RDP traffic and you will observe there is a continuous flow of traffic due to the fact that we are utilizing RDP to connect to our virtual machine. 
+</p>
